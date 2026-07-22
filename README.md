@@ -1,4 +1,4 @@
-# Defect Inspector v4.2 (YOLO + OCR Defect Inspection System)
+# Defect Inspector Sample Code (YOLO + OCR Defect Inspection System)
 
 Defect Inspector is an industrial-grade dual-screen visual inspection application developed with Python and Tkinter, specially designed to be paired with **Transcend ECM series lenses/cameras**. It integrates Ultralytics YOLO for object/defect detection and PaddleOCR for real-time text recognition.
 
@@ -127,17 +127,14 @@ If you encounter a false positive or a missed detection and want to add it to yo
 
 ## Troubleshooting
 
-1. **Q: The app crashes immediately, and the terminal shows "Cannot load icon".**
-   * **A**: Ensure you have an image file named `ts.png` in the root directory of the project.
-
-2. **Q: The bottom status bar is stuck at "Detection model not found: stick".**
+1. **Q: The bottom status bar is stuck at "Detection model not found: stick".**
    * **A**: Make sure you have created the `models` folder and placed the `stick_best.pt` file inside it.
 
-3. **Q: The screen is black, and the terminal shows a critical error about not finding a camera device.**
+2. **Q: The screen is black, and the terminal shows a critical error about not finding a camera device.**
    * **A**: 
      1. Check your Transcend ECM camera's connection.
      2. The program scans `/dev/v4l/by-path/` and `/dev/video*` (Linux) or index 0-5 (Windows). If your camera is being used by another application (like OBS or a web browser), close that application and restart this script.
 
-4. **Q: PaddleOCR throws an error on Linux (missing libgomp or similar libraries).**
+3. **Q: PaddleOCR throws an error on Linux (missing libgomp or similar libraries).**
    * **A**: Install the required system dependencies by running: 
      `sudo apt-get install libgomp1 libglib2.0-0 libsm6 libxext6 libxrender-dev`
