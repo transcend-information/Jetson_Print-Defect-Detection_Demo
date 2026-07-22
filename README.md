@@ -60,7 +60,7 @@ Before running the application, you must manually create a `models` directory an
 ```text
 defect-inspector/
 |
-|-- main.py                # Main application script
+|-- demo_camera.py         # Main application script
 |-- ts.png                 # Application Icon (Required, app will crash without it)
 |
 |-- models/                # -> You must create this folder and add models
