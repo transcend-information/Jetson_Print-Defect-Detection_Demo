@@ -1,4 +1,4 @@
-# Defect Inspector Sample Code (YOLO + OCR Defect Inspection System)
+# Defect Inspector v4.2 (YOLO + OCR Defect Inspection System)
 
 Defect Inspector is an industrial-grade dual-screen visual inspection application developed with Python and Tkinter, specially designed to be paired with **Transcend ECM series lenses/cameras**. It integrates Ultralytics YOLO for object/defect detection and PaddleOCR for real-time text recognition.
 
@@ -61,7 +61,6 @@ Before running the application, you must manually create a `models` directory an
 defect-inspector/
 |
 |-- demo_camera.py         # Main application script
-|-- ts.png                 # Application Icon (Required, app will crash without it)
 |
 |-- models/                # -> You must create this folder and add models
 |   |-- stick_best.pt      # YOLO model for sticker detection
@@ -92,13 +91,24 @@ Look at the **CONFIG & PREVIEW** panel on the left. Click the radio buttons at t
 1. Ensure the Transcend ECM camera feed is displaying correctly on the left panel.
 2. **Click and drag** your mouse over the left video feed to draw a red bounding box (ROI).
 3. Release the mouse button. The system will lock onto this area and begin continuous automatic detection.
-   * *A light blue tracking box will appear on the left screen indicating the live target.*
-   * *The status in the top right will change to "SCANNING ROI".*
+
+As shown in the image below, once the target enters the user-defined red bounding box (ROI), the system automatically isolates the object, physically deskews (straightens) it, and begins defect detection.
+
+![ROI Selection](./Picture1.png)
 
 ### Step 3: Review Detection Results
-* **Gallery Inspection (Right Panel)**: Captured and deskewed objects are displayed here.
-    * If defects are found: The gallery border will glow red, and a "Defects: X" warning will appear.
-    * If no defects are found: The gallery border will glow green.
+The right panel provides a detailed Gallery Inspection view. The system provides clear visual feedback based on the detection results.
+
+**PASS State:**
+If no defects are detected, the zoomed inspection gallery will display a green glowing border along with a clear **PASS** indicator.
+
+![PASS Result](./Picture3.png)
+
+**FAIL State:**
+If defects are found, the inspection gallery will switch to a red glowing border. The exact locations of the defects will be highlighted with red bounding boxes directly on the deskewed image.
+
+![FAIL Result](./Picture4.png)
+
 * **Mouse Wheel Zoom**: Hover over the right panel and use your **mouse wheel** to zoom in and out for closer manual inspection.
 * **OCR Readout**: The bottom right section automatically formats and displays the text recognized by PaddleOCR.
 
