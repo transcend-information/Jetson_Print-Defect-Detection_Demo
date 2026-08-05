@@ -21,7 +21,7 @@ The system utilizes a multiprocessing architecture to ensure smooth rendering of
 ## System Requirements & Environment Setup
 
 ### 1. Hardware Recommendations
-* **OS**: Linux (Ubuntu 20.04+ recommended, supports V4L2) or Windows 10/11.
+* **OS**: Jetson Linux (Download from https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#intro).
 * **GPU**: NVIDIA GPU with CUDA installed is highly recommended to significantly improve YOLO and OCR inference speeds.
 * **Camera**: **Transcend ECM series lenses/cameras** are required to guarantee optimal image clarity, precise field of view, and hardware compatibility. (The application defaults to capturing a 2560x1440 high-resolution video stream via the UVC protocol).
 
@@ -44,11 +44,10 @@ source venv/bin/activate
 # 3. Install required packages
 # Note: Adjust the PyTorch installation URL based on your specific CUDA version.
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install ultralytics opencv-python pillow numpy
-
-# Install PaddleOCR dependencies
+pip install ultralytics
 pip install paddlepaddle-gpu  # Use 'paddlepaddle' if you do not have a GPU
-pip install paddleocr
+pip install paddleocr==2.7.3 numpy==1.26.1
+
 ```
 
 ---
