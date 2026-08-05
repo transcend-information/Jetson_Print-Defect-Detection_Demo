@@ -93,7 +93,7 @@ Look at the **CONFIG & PREVIEW** panel on the left. Click the radio buttons at t
 
 As shown in the image below, once the target enters the user-defined red bounding box (ROI), the system automatically isolates the object, physically deskews (straightens) it, and begins defect detection.
 
-![ROI Selection](./Image1.png)
+![ROI Selection](./images/Image1.png)
 
 ### Step 3: Review Detection Results
 The right panel provides a detailed Gallery Inspection view. The system provides clear visual feedback based on the detection results.
@@ -101,12 +101,12 @@ The right panel provides a detailed Gallery Inspection view. The system provides
 **PASS State:**
 If no defects are detected, the zoomed inspection gallery will display a green glowing border along with a clear **PASS** indicator.
 
-![PASS Result](./Image2.png)
+![PASS Result](./images/Image2.png)
 
 **FAIL State:**
 If defects are found, the inspection gallery will switch to a red glowing border. The exact locations of the defects will be highlighted with red bounding boxes directly on the deskewed image.
 
-![FAIL Result](./Image3.png)
+![FAIL Result](./images/Image3.png)
 
 * **Mouse Wheel Zoom**: Hover over the right panel and use your **mouse wheel** to zoom in and out for closer manual inspection.
 * **OCR Readout**: The bottom right section automatically formats and displays the text recognized by PaddleOCR.
