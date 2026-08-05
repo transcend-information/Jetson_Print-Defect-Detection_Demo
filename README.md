@@ -93,7 +93,7 @@ Look at the **CONFIG & PREVIEW** panel on the left. Click the radio buttons at t
 
 As shown in the image below, once the target enters the user-defined red bounding box (ROI), the system automatically isolates the object, physically deskews (straightens) it, and begins defect detection.
 
-![ROI Selection](./images/image1.png)
+![ROI Selection](./images/Image1.png)
 
 ### Step 3: Review Detection Results
 The right panel provides a detailed Gallery Inspection view. The system provides clear visual feedback based on the detection results.
