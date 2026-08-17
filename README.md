@@ -23,7 +23,7 @@ The system utilizes a multiprocessing architecture to ensure smooth rendering of
 ### 1. Hardware Recommendations
 * **OS**: Jetson Linux (Download from https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#intro).
 * **GPU**: NVIDIA GPU with CUDA installed is highly recommended to significantly improve YOLO and OCR inference speeds.
-* **Camera**: **Transcend ECM series lenses/cameras** are required to guarantee optimal image clarity, precise field of view, and hardware compatibility. (The application defaults to capturing a 2560x1440 high-resolution video stream via the UVC protocol).
+* **Camera**: **Transcend ECM series lenses/cameras** are required to capture high-resolution video via the **UVC protocol**, ensuring optimal image clarity, precise field of view, and full hardware compatibility.
 
 ### 2. Software Dependencies
 Please ensure **Python 3.8 or higher** is installed.
@@ -36,9 +36,7 @@ cd defect-inspector
 # 2. Create a virtual environment (Highly Recommended)
 python -m venv venv
 
-# Activate on Windows:
-venv\Scripts\activate
-# Activate on Linux/Mac:
+# Activate on Linux:
 source venv/bin/activate
 
 # 3. Install required packages
@@ -46,7 +44,7 @@ source venv/bin/activate
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install ultralytics
 pip install paddlepaddle-gpu  # Use 'paddlepaddle' if you do not have a GPU
-pip install paddleocr==2.7.3 numpy==1.26.1
+pip install paddleocr==2.7.3 numpy==1.26.1  #Version compatibility warnings or errors can be safely ignored
 
 ```
 
@@ -132,7 +130,7 @@ If you encounter a false positive or a missed detection and want to add it to yo
 2. **Q: The screen is black, and the terminal shows a critical error about not finding a camera device.**
    * **A**: 
      1. Check your Transcend ECM camera's connection.
-     2. The program scans `/dev/v4l/by-path/` and `/dev/video*` (Linux) or index 0-5 (Windows). If your camera is being used by another application (like OBS or a web browser), close that application and restart this script.
+     2. The program scans `/dev/v4l/by-path/` and `/dev/video*` (Linux). If your camera is being used by another application (like OBS or a web browser), close that application and restart this script.
 
 3. **Q: PaddleOCR throws an error on Linux (missing libgomp or similar libraries).**
    * **A**: Install the required system dependencies by running: 
